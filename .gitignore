@@ -1,6 +1,5 @@
 node_modules
 .DS_Store
-dist
 dist-ssr
 *.local
 
@@ -24,7 +23,6 @@ jspm_packages/
 *.swp
 
 # Build
-dist
 dist-ssr
 
 # IDE / Editor
