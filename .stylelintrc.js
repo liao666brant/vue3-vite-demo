@@ -9,7 +9,7 @@ module.exports = {
   rules: {
     'no-descending-specificity': null,
     'function-url-quotes': 'always',
-    'string-quotes': 'double',
+    'string-quotes': 'single',
     indentation: 2,
     'unit-case': null,
     'color-hex-case': 'lower',

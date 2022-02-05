@@ -16,7 +16,7 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
   ],
-  base: '/',
+  base: '/vue3-vite-demo/',
   resolve: {
     extensions: ['.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
     alias: [
