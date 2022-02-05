@@ -23,7 +23,7 @@ const routes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
-  history: createWebHashHistory('/vue3-vite-demo/'),
+  history: createWebHashHistory(),
   routes,
 });
 
