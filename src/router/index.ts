@@ -1,30 +1,22 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
-import Home from '@/pages/Home/index.vue';
-
-const routes: Array<RouteRecordRaw> = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home,
-    meta: { keepAlive: true },
-  },
-  {
-    path: '/news/:contentId',
-    name: 'NewsDetail',
-    component: () => import('@/pages/NewsDetail/index.vue'),
-    meta: { keepAlive: false },
-  },
-  {
-    path: '/other',
-    name: 'Other',
-    component: () => import('@/pages/Other/index.vue'),
-    meta: { keepAlive: false },
-  },
-];
+import { routes } from './routeConfig';
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
+});
+
+router.beforeEach((to, from) => {
+  // console.log('[ to ] 🚀, ', JSON.parse(JSON.stringify(to)));
+  // console.log('[ from ] 🚀, ', JSON.parse(JSON.stringify(from)));
+  if (to.matched.length === 0) {
+    return '/';
+  }
+  if (to.name === 'NewsDetail') {
+    if (Object.keys(to.params).length === 1) {
+      return '/';
+    }
+  }
 });
 
 export default router;

@@ -1,5 +1,4 @@
 <template>
-  test
   <router-view v-slot="{ Component }">
     <keep-alive :include="['HomePage']">
       <component :is="Component" />

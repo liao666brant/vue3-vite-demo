@@ -1,1 +1,0 @@
-import{d as o,k as n,o as t,c as r}from"./vendor.8d9b8b2a.js";const l=o({setup(a,{expose:e}){return n(()=>{console.log("Other\u9500\u6BC1\u4E86")}),e({name:"Other"}),(s,c)=>(t(),r("div",null,"123"))}});export{l as default};
