@@ -5,7 +5,9 @@
 declare module 'vue' {
   export interface GlobalComponents {
     ElCard: typeof import('element-plus/es')['ElCard']
+    ElEmpty: typeof import('element-plus/es')['ElEmpty']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    InfiniteScroll: typeof import('element-plus/es')['ElInfiniteScroll']
   }
 }
 

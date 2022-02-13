@@ -1,12 +1,14 @@
 <template>
   <main class="container">
-    <el-card v-for="(item, index) in state.newList" :key="index" class="news-card">
-      <template #header>
-        {{ item.title }}
-      </template>
-      <div class="content" @click="viewDetail(item)" v-html="item.articleAbstract"></div>
-      <div class="author-name">{{ item.authorName }}</div>
-    </el-card>
+    <ul v-infinite-scroll="load" class="infinite-list" infinite-scroll-distance="20">
+      <el-card v-for="(item, index) in state.loadNews" :key="index" class="news-card">
+        <template #header>
+          {{ item.title }}
+        </template>
+        <div v-dompurify-html="item.articleAbstract" class="content" @click="viewDetail(item)"></div>
+        <div class="author-name">{{ item.authorName }}</div>
+      </el-card>
+    </ul>
   </main>
 </template>
 
@@ -18,20 +20,22 @@ export default {
 <script setup lang="ts">
 import { onBeforeMount, onUnmounted, reactive } from 'vue';
 import { COVID19News, COVID19NewsModel } from '@/api/news';
-import { useRoute, useRouter } from 'vue-router';
+import { useRouter } from 'vue-router';
 
 const state = reactive({
   newList: [] as COVID19NewsModel[],
+  loadNews: [] as COVID19NewsModel[],
 });
 
-const route = useRoute();
-console.log('[ route ] 🚀, ', route.meta.keepAlive);
 const router = useRouter();
+let isLoading = false;
 
 const getInfo = async () => {
   console.log('[ getInfo ] 🚀, ');
   const data = await COVID19News();
   state.newList = data;
+  state.loadNews = data.slice(0, 10);
+  isLoading = true;
 };
 
 const viewDetail = (item: COVID19NewsModel) => {
@@ -41,10 +45,18 @@ const viewDetail = (item: COVID19NewsModel) => {
   });
 };
 
+const load = () => {
+  console.log('[ load ] 🚀');
+  const len = state.loadNews.length;
+  if (isLoading === true) {
+    state.loadNews.push(...state.newList.slice(len, len + 5));
+    console.log('[ state.loadNews ] 🚀, ', state.loadNews.length);
+  }
+};
+
 defineExpose({ name: 'Home' });
 
 onBeforeMount(() => {
-  console.log(state.newList);
   getInfo();
 });
 onUnmounted(() => {

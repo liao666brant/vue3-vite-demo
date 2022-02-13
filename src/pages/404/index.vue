@@ -1,5 +1,5 @@
 <template>
-  <h3 class="title">来到了网络荒漠~~</h3>
+  <el-empty description="来到了网络荒漠~~"></el-empty>
 </template>
 
 <script lang="ts">

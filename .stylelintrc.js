@@ -19,6 +19,7 @@ module.exports = {
     'block-opening-brace-space-before': 'always',
     'property-no-unknown': null,
     'no-empty-source': null,
+    'declaration-block-trailing-semicolon': null, // 解决prettier声明块尾随分号冲突
     'selector-pseudo-class-no-unknown': [
       true,
       {

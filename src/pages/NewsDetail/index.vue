@@ -4,7 +4,7 @@
       <template #header>
         {{ params.title }}
       </template>
-      <div class="content" v-html="params.articleAbstract"></div>
+      <div v-dompurify-html="params.articleAbstract" class="content"></div>
       <div class="author-name">{{ params.authorName }}</div>
       <router-link to="/other">to</router-link>
     </el-card>

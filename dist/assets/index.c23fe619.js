@@ -1,1 +1,0 @@
-import{_ as e}from"./index.3cce8a9a.js";import{o as t,i as _}from"./vendor.5cc1c1ef.js";const o={name:"404"},s={class:"title"};function a(c,r,n,u,p,d){return t(),_("h3",s,"\u6765\u5230\u4E86\u7F51\u7EDC\u8352\u6F20~~")}var f=e(o,[["render",a],["__scopeId","data-v-c02128ec"]]);export{f as default};
