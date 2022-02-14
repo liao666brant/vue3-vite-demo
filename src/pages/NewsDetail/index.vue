@@ -6,7 +6,7 @@
       </template>
       <div v-dompurify-html="params.articleAbstract" class="content"></div>
       <div class="author-name">{{ params.authorName }}</div>
-      <router-link to="/other">to</router-link>
+      <router-link :to="{ name: 'Other' }">to</router-link>
     </el-card>
   </div>
 </template>

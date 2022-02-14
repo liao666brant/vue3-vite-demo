@@ -7,6 +7,13 @@ export const routes: Array<RouteRecordRaw> = [
     name: 'Home',
     component: Home,
     meta: { keepAlive: true },
+    children: [
+      {
+        path: '/home/detail',
+        name: 'HomeDetail',
+        component: () => import('@/pages/Home/HomeDetail/index.vue'),
+      },
+    ],
   },
   {
     path: '/:pathMatch(.*)*',
@@ -24,6 +31,13 @@ export const routes: Array<RouteRecordRaw> = [
     name: 'Other',
     component: () => import('@/pages/Other/index.vue'),
     meta: { keepAlive: false },
+    children: [
+      {
+        path: '/other/why',
+        name: 'Why',
+        component: () => import('@/pages/Other/Why/index.vue'),
+      },
+    ],
   },
 ];
 
