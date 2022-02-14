@@ -1,1 +1,0 @@
-import{y as t,o as _,c as o}from"./vendor.071d9c39.js";import{_ as r}from"./index.47f2f9ac.js";const a={name:"404"};function n(c,p,s,u,d,i){const e=t;return _(),o(e,{description:"\u6765\u5230\u4E86\u7F51\u7EDC\u8352\u6F20~~"})}var f=r(a,[["render",n],["__scopeId","data-v-d4018334"]]);export{f as default};
