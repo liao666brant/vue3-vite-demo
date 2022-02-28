@@ -14,9 +14,12 @@
 <script setup lang="ts">
 import { onUnmounted, reactive } from 'vue';
 import { COVID19NewsModel } from '@/api/news';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
+
+defineExpose({});
 
 const route = useRoute();
+const router = useRouter();
 const params = reactive(route.params as unknown as COVID19NewsModel);
 
 // console.log('[ params ] 🚀, ', params);

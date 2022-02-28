@@ -7,8 +7,12 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from) => {
+  console.log('[ to-beforeEach ] 🚀');
   // console.log('[ to ] 🚀, ', JSON.parse(JSON.stringify(to)));
   // console.log('[ from ] 🚀, ', JSON.parse(JSON.stringify(from)));
+  if (to.meta.title) {
+    document.title = to.meta.title as string;
+  }
   if (to.matched.length === 0) {
     return '/';
   }

@@ -10,6 +10,7 @@
 import { onUnmounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { mainStore } from '@/store';
+import { ElMessage } from 'element-plus';
 
 const router = useRouter();
 const store = mainStore();
@@ -18,6 +19,10 @@ console.log('[ store ] 🚀, ', store);
 const handleTo = () => {
   router.push({
     name: 'Why',
+  });
+  ElMessage({
+    message: 'Congrats, this is a success message.',
+    type: 'success',
   });
 };
 

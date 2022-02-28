@@ -6,7 +6,7 @@ export const routes: Array<RouteRecordRaw> = [
     path: '/',
     name: 'Home',
     component: Home,
-    meta: { keepAlive: true },
+    meta: { keepAlive: true, title: '动态疫情新闻' },
     children: [
       {
         path: '/home/detail',
@@ -18,13 +18,17 @@ export const routes: Array<RouteRecordRaw> = [
   {
     path: '/:pathMatch(.*)*',
     name: '404',
+    meta: { title: '404!' },
     component: () => import('@/pages/404/index.vue'),
   },
   {
     path: '/news/:contentId',
     name: 'NewsDetail',
     component: () => import('@/pages/NewsDetail/index.vue'),
-    meta: { keepAlive: false },
+    meta: { keepAlive: false, title: '' },
+    beforeEnter(to, form) {
+      document.title = to.params.title as string;
+    },
   },
   {
     path: '/other',
@@ -40,5 +44,3 @@ export const routes: Array<RouteRecordRaw> = [
     ],
   },
 ];
-
-export default {};
