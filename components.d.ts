@@ -10,6 +10,8 @@ declare module 'vue' {
     ElEmpty: typeof import('element-plus/es')['ElEmpty']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     InfiniteScroll: typeof import('element-plus/es')['ElInfiniteScroll']
+    MilkDown: typeof import('./src/components/MilkDown/index.vue')['default']
+    Setup: typeof import('./src/components/MilkDown/setup.vue')['default']
   }
 }
 

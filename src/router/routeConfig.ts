@@ -43,4 +43,9 @@ export const routes: Array<RouteRecordRaw> = [
       },
     ],
   },
+  {
+    path: '/md',
+    name: 'Markdown',
+    component: () => import('@/pages/markdown/index.vue'),
+  },
 ];
