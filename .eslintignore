@@ -1,3 +1,9 @@
-{
-  "ignorePatterns" : [".gitlab-ci.yml"]
-}
+/logs
+/server/mockData
+/node_modules
+/dist
+/onlinedist
+/src/lib/achieve/KSWebBridge.js
+/package-lock.json
+.DS_Store
+fis-conf.js
