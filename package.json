@@ -5,6 +5,7 @@
     "dev": "vite --port 8888 --host 0.0.0.0 --open",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
+    "lint": "eslint --ext .js,.vue,.tsx --ignore-path .gitignore --fix src",
     "format": "prettier . --write",
     "commit": "cz",
     "prepare": "husky install"
