@@ -1,1 +1,12 @@
-.news-card[data-v-b60e5448]{margin:10px}.news-card .content[data-v-b60e5448]:first-letter{float:left;padding-right:5px;font-size:2em;text-transform:uppercase}.news-card .author-name[data-v-b60e5448]{text-align:right}
+.news-card[data-v-b60e5448] {
+  margin: 10px;
+}
+.news-card .content[data-v-b60e5448]:first-letter {
+  float: left;
+  padding-right: 5px;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+.news-card .author-name[data-v-b60e5448] {
+  text-align: right;
+}
