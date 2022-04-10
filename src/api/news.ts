@@ -16,7 +16,8 @@ export interface COVID19NewsModel {
 }
 
 export const COVID19News = async (): Promise<COVID19NewsModel[]> => {
-  const url = 'https://cdn.mdeer.com/contentdtos.js?callback=callbackcontentdtos&t=1628318435956&_=1628318432739';
+  const url =
+    'https://cdn.mdeer.com/contentdtos.js?callback=callbackcontentdtos&t=1628318435956&_=1628318432739';
   const { data } = await axios.get(url);
   const result = data.slice(20, data.length - 1);
   return JSON.parse(result);
