@@ -7,3 +7,5 @@
 /package-lock.json
 .DS_Store
 fis-conf.js
+auto-imports.d.ts
+components.d.ts

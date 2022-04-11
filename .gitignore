@@ -4,6 +4,9 @@ dist
 dist-ssr
 *.local
 
+./components.d.ts
+./auto-imports.d.ts
+
 # Logs
 /logs
 *.log
