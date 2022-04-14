@@ -7,7 +7,7 @@ import { routes } from './routeConfig';
 
 const router = createRouter({
   // history: createWebHashHistory(),
-  history: createWebHistory(),
+  history: createWebHistory('/vue3-vite-demo'),
   routes,
 });
 

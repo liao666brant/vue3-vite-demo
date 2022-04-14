@@ -1,28 +1,35 @@
 <template>
   <main class="container">
     <router-view></router-view>
-    <transition-group
-      v-infinite-scroll="load"
-      tag="ul"
-      name="list"
-      class="infinite-list"
-      :infinite-scroll-delay="500"
-    >
-      <el-card
-        v-for="(item, index) in state.loadNews"
-        :key="index"
-        class="news-card"
+    <el-skeleton :loading="state.loading" :rows="5" animated>
+      <transition-group
+        v-infinite-scroll="load"
+        tag="ul"
+        name="list"
+        class="infinite-list"
+        :infinite-scroll-delay="200"
+        :infinite-scroll-distance="100"
       >
-        <template #header>{{ item.title }}</template>
-        <div
-          v-dompurify-html="item.articleAbstract"
-          class="content"
-          @click="viewDetail(item)"
-        ></div>
-        <div class="author-name">{{ item.authorName }}</div>
-      </el-card>
-      <el-empty key="empty" description="没有了呢~~"></el-empty>
-    </transition-group>
+        <el-card
+          v-for="(item, index) in state.loadNews"
+          :key="index"
+          class="news-card"
+        >
+          <template #header>{{ item.title }}</template>
+          <div
+            v-dompurify-html="item.articleAbstract"
+            class="content"
+            @click="viewDetail(item)"
+          ></div>
+          <div class="author-name">{{ item.authorName }}</div>
+        </el-card>
+        <el-empty
+          v-show="state.showEmpty"
+          key="empty"
+          description="没有了呢~~"
+        ></el-empty>
+      </transition-group>
+    </el-skeleton>
   </main>
 </template>
 
@@ -37,19 +44,20 @@ import { COVID19News, COVID19NewsModel } from '@/api/news';
 import { useRouter } from 'vue-router';
 
 const state = reactive({
+  loading: true,
+  showEmpty: false,
   newList: [] as COVID19NewsModel[],
   loadNews: [] as COVID19NewsModel[],
 });
 
 const router = useRouter();
-let isLoading = false;
 
 const getInfo = async () => {
   console.log('[ getInfo ] 🚀, ');
   const data = await COVID19News();
   state.newList = data;
   state.loadNews = data.slice(0, 10);
-  isLoading = true;
+  state.loading = false;
 };
 
 const viewDetail = (item: COVID19NewsModel) => {
@@ -60,11 +68,13 @@ const viewDetail = (item: COVID19NewsModel) => {
 };
 
 const load = () => {
-  console.log('[ load ] 🚀');
   const len = state.loadNews.length;
-  if (isLoading === true) {
+  if (state.loading === false) {
     state.loadNews.push(...state.newList.slice(len, len + 5));
     console.log('[ state.loadNews ] 🚀, ', state.loadNews.length);
+  }
+  if (state.loadNews.length === state.newList.length) {
+    state.showEmpty = true;
   }
 };
 
