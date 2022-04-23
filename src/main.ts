@@ -9,7 +9,4 @@ import VueDOMPurifyHTML from 'vue-dompurify-html';
 const pinia = createPinia();
 const app = createApp(App);
 
-app.use(VueDOMPurifyHTML);
-app.use(router);
-app.use(pinia);
-app.mount('#app');
+app.use(router).use(pinia).use(VueDOMPurifyHTML).mount('#app');
