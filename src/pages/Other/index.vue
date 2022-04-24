@@ -3,6 +3,11 @@
   <el-divider></el-divider>
   <el-button type="primary" size="default" @click="handleTo">to Why</el-button>
   <el-divider></el-divider>
+  <p>useState: {{ count }}</p>
+  <el-button type="primary" size="default" @click="setCount(count + 1)">
+    +
+  </el-button>
+
   <router-view></router-view>
 </template>
 
@@ -11,10 +16,14 @@ import { onUnmounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { mainStore } from '@/store';
 import { ElMessage } from 'element-plus';
+import useState from '@/hooks/useState';
 
 const router = useRouter();
 const store = mainStore();
-console.log('[ store ] 🚀, ', store);
+
+const [count, setCount] = useState(0);
+
+setCount(1);
 
 const handleTo = () => {
   router.push({
