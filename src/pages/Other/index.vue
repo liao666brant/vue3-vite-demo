@@ -7,6 +7,22 @@
   <el-button type="primary" size="default" @click="setCount(count + 1)">
     +
   </el-button>
+  <el-button
+    type="primary"
+    size="default"
+    @click="setCount((value) => value.value - 1)"
+  >
+    -
+  </el-button>
+
+  <div>
+    <h3>useReactive</h3>
+    <p>名字: {{ data.name }}</p>
+    <p>年龄: {{ data.age }}</p>
+  </div>
+
+  <button @click="setData('age', (state) => state + 1)">age+</button>
+  <button @click="setData('age', data.age - 1)">age-</button>
 
   <router-view></router-view>
 </template>
@@ -17,13 +33,22 @@ import { useRouter } from 'vue-router';
 import { mainStore } from '@/store';
 import { ElMessage } from 'element-plus';
 import useState from '@/hooks/useState';
+import useReactive from '@/hooks/useReactive';
 
 const router = useRouter();
 const store = mainStore();
 
 const [count, setCount] = useState(0);
 
-setCount(1);
+const [data, setData] = useReactive({
+  name: 'other',
+  age: 12,
+  address: '北京',
+  alive: true,
+});
+setData({
+  address: '上海',
+});
 
 const handleTo = () => {
   router.push({
