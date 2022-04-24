@@ -18,11 +18,14 @@ const TodoReducer = (state: any, action: ActionModel): void => {
 
   switch (type) {
     case actionTypes.ADD_TODO:
-      return addTodo(state, payload);
+      addTodo(state, payload);
+      break;
     case actionTypes.TOGGLE_TODO:
-      return toggleTodo(state, payload);
+      toggleTodo(state, payload);
+      break;
     case actionTypes.REMOVE_TODO:
-      return removeTodo(state, payload);
+      removeTodo(state, payload);
+      break;
     default:
       break;
   }
