@@ -31,7 +31,7 @@ module.exports = {
       },
     ],
     'vue/multi-word-component-names': [
-      'error',
+      'warn',
       {
         ignores: ['404', 'index'],
       },
