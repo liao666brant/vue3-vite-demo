@@ -18,6 +18,7 @@ function useReactive<T extends object>(initialState: T) {
   const stateRefs = toRefs(state);
 
   const setObj = (key: T & Initial) => {
+    // TODO 使用Object.assign() 重写
     for (const target in key) {
       if (target in key) {
         state[target] = key[target];
@@ -63,3 +64,10 @@ function useReactive<T extends object>(initialState: T) {
 }
 
 export default useReactive;
+
+const [count, setCount] = useReactive({
+  name: 'setCount',
+});
+setCount('name', (value) => {
+  return value + '1';
+});

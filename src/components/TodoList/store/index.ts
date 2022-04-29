@@ -1,4 +1,5 @@
 import { TodoReducer } from './reducer';
+import { last } from 'lodash';
 
 const actionTypes = {
   ADD_TODO: 'ADD_TODO',

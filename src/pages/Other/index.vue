@@ -34,6 +34,8 @@ import { mainStore } from '@/store';
 import { ElMessage } from 'element-plus';
 import useState from '@/hooks/useState';
 import useReactive from '@/hooks/useReactive';
+import { last } from 'lodash';
+console.log('[ last ] 🚀, ', last);
 
 const router = useRouter();
 const store = mainStore();

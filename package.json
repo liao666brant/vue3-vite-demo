@@ -26,8 +26,9 @@
     "@milkdown/vue": "^5.5.0",
     "axios": "^0.25.0",
     "element-plus": "^2.0.1",
+    "lodash": "^4.17.21",
     "pinia": "^2.0.11",
-    "vue": "^3.2.31",
+    "vue": "^3.2.33",
     "vue-dompurify-html": "^3.0.0-beta.2",
     "vue-router": "^4.0.12"
   },

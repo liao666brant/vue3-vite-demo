@@ -48,4 +48,9 @@ export const routes: Array<RouteRecordRaw> = [
     name: 'Markdown',
     component: () => import('@/pages/markdown/index.vue'),
   },
+  {
+    path: '/style',
+    name: 'StylePage',
+    component: () => import('@/pages/style/index.vue'),
+  },
 ];
