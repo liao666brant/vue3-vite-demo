@@ -1,20 +1,16 @@
 import { TodoReducer } from './reducer';
-import { last } from 'lodash';
 
-const actionTypes = {
-  ADD_TODO: 'ADD_TODO',
-  TOGGLE_TODO: 'TOGGLE_TODO',
-  REMOVE_TODO: 'REMOVE_TODO',
-};
-
-interface Payload {
-  type: string;
+// ! 设置只读的字典
+enum actionTypes {
+  ADD_TODO = 'ADD_TODO',
+  TOGGLE_TODO = 'TOGGLE_TODO',
+  REMOVE_TODO = 'REMOVE_TODO',
 }
 
 interface ActionModel {
   type: keyof typeof actionTypes;
-  payload: any;
+  payload?: any;
 }
 
-export { actionTypes, TodoReducer, Payload, ActionModel };
+export { actionTypes, TodoReducer, ActionModel };
 export default actionTypes;

@@ -11,15 +11,9 @@ const state = reactive({
   name: 'App',
 });
 
-const [todoList, todoDispatch] = useReducer<ActionModel['type']>(
-  TodoReducer,
-  []
-);
+const [todoList, todoDispatch] = useReducer(TodoReducer, []);
 todoList;
-todoDispatch({
-  type: 'REMOVE_TODO',
-  payload: 12,
-});
+todoDispatch({ type: 'Add' });
 </script>
 
 <style scoped></style>

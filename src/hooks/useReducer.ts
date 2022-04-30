@@ -1,8 +1,19 @@
-import { reactive } from 'vue';
+/*
+ * useReducer 是 useState的代替方案，用于 state 复杂变化
+ * useReducer 是单个组件状态管理，组件通讯还需要 props
+ * redux 是全局状态管理，多组件共享数据
+ */
 
-interface Dispatch<T> {
-  ({ type, payload }: { type: T; payload: any }): void;
+import { reactive, UnwrapNestedRefs } from 'vue';
+interface DispatchParams<T = string> {
+  type: T;
+  payload?: any;
 }
+
+type UseReducer<T> = [
+  UnwrapNestedRefs<T>,
+  <U>(action: DispatchParams<U>) => void
+];
 
 /**
  * Reducer状态管理钩子
@@ -11,15 +22,21 @@ interface Dispatch<T> {
  * @param {Function} reducer 具体的reducer,执行action函数需要类型名和payload装载值
  * @param {*} initialState 初始值
  */
-export default function useReducer<T>(reducer: Function, initialState: any) {
+function useReducer<T extends object>(reducer: Function, initialState: T) {
   const state = reactive(initialState);
-  const action = {} as { type: T; payload: any };
 
-  const dispatch: Dispatch<T> = ({ type, payload }) => {
-    action.type = type;
-    action.payload = payload;
+  const dispatch = <U>(action: DispatchParams<U>) => {
+    if (Object.prototype.toString.call(action) !== '[object Object]') {
+      throw new TypeError(`The Parameter 'action' must be the type 'Object'.`);
+    }
+    if (!('type' in action)) {
+      throw new ReferenceError(`The parameter 'action' need a property 'type'`);
+    }
+    const { type, payload } = action;
     reducer(state, action);
   };
 
-  return [state, dispatch] as [typeof initialState, typeof dispatch];
+  return [state, dispatch] as UseReducer<T>;
 }
+
+export default useReducer;

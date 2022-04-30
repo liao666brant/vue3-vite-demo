@@ -2,10 +2,6 @@ import actionTypes from './index';
 import type { ActionModel } from './index';
 import { addTodo, toggleTodo, removeTodo } from './actions';
 
-interface Callback {
-  (state: any, payload: any): void;
-}
-
 /**
  * Reducer函数
  * 执行一个逻辑函数

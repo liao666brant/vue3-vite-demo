@@ -64,10 +64,3 @@ function useReactive<T extends object>(initialState: T) {
 }
 
 export default useReactive;
-
-const [count, setCount] = useReactive({
-  name: 'setCount',
-});
-setCount('name', (value) => {
-  return value + '1';
-});
