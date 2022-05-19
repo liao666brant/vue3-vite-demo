@@ -21,7 +21,7 @@
     <p>年龄: {{ data.age }}</p>
   </div>
 
-  <button @click="setData('age', (state) => state + 1)">age+</button>
+  <el-button @click="setData('age', (state) => state + 1)">age+</el-button>
   <button @click="setData('age', data.age - 1)">age-</button>
 
   <router-view></router-view>

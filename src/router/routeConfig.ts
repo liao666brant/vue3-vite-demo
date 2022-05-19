@@ -53,4 +53,14 @@ export const routes: Array<RouteRecordRaw> = [
     name: 'StylePage',
     component: () => import('@/pages/style/index.vue'),
   },
+  {
+    path: '/funComponent',
+    name: 'FunComponent',
+    component: () => import('@/pages/FunctionComponent/demo.vue'),
+  },
+  {
+    path: '/tsx',
+    name: 'TSXPage',
+    component: () => import('@/pages/TSX'),
+  },
 ];
