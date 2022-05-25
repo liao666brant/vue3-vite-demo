@@ -7,7 +7,7 @@ import { reactive } from 'vue';
 
 import { useReducer } from '@/hooks';
 
-import { ActionModel,actionTypes, TodoReducer } from './store';
+import { ActionModel, actionTypes, TodoReducer } from './store';
 
 const state = reactive({
   name: 'App',

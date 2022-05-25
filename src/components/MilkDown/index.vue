@@ -12,7 +12,7 @@ import {
 import { listener, listenerCtx } from '@milkdown/plugin-listener';
 import { commonmark } from '@milkdown/preset-commonmark';
 import { nord } from '@milkdown/theme-nord';
-import { useEditor,VueEditor } from '@milkdown/vue';
+import { useEditor, VueEditor } from '@milkdown/vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
