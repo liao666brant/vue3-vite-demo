@@ -9,10 +9,10 @@ import {
   editorViewOptionsCtx,
   rootCtx,
 } from '@milkdown/core';
-import { nord } from '@milkdown/theme-nord';
-import { VueEditor, useEditor } from '@milkdown/vue';
-import { commonmark } from '@milkdown/preset-commonmark';
 import { listener, listenerCtx } from '@milkdown/plugin-listener';
+import { commonmark } from '@milkdown/preset-commonmark';
+import { nord } from '@milkdown/theme-nord';
+import { useEditor,VueEditor } from '@milkdown/vue';
 
 const props = defineProps({
   modelValue: {

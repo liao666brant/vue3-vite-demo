@@ -40,8 +40,9 @@ export default {
 </script>
 <script setup lang="ts">
 import { onBeforeMount, onUnmounted, reactive } from 'vue';
-import { COVID19News, COVID19NewsModel } from '@/api/news';
 import { useRouter } from 'vue-router';
+
+import { COVID19News, COVID19NewsModel } from '@/api/news';
 
 const state = reactive({
   loading: true,

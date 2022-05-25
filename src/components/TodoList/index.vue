@@ -3,9 +3,11 @@
 </template>
 
 <script setup lang="ts">
-import { useReducer } from '@/hooks';
-import { actionTypes, TodoReducer, ActionModel } from './store';
 import { reactive } from 'vue';
+
+import { useReducer } from '@/hooks';
+
+import { ActionModel,actionTypes, TodoReducer } from './store';
 
 const state = reactive({
   name: 'App',

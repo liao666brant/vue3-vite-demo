@@ -13,8 +13,9 @@
 
 <script setup lang="ts">
 import { onUnmounted, reactive } from 'vue';
-import { COVID19NewsModel } from '@/api/news';
 import { useRoute, useRouter } from 'vue-router';
+
+import { COVID19NewsModel } from '@/api/news';
 
 defineExpose({});
 

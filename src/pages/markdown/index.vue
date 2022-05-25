@@ -7,8 +7,9 @@
 </template>
 
 <script setup lang="ts">
-import MdEditor from '@/components/MilkDown/index.vue';
 import { ref } from 'vue';
+
+import MdEditor from '@/components/MilkDown/index.vue';
 
 const content = ref('# Hello milkdown everybody');
 </script>
