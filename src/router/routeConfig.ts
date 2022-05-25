@@ -63,4 +63,9 @@ export const routes: Array<RouteRecordRaw> = [
     name: 'TSXPage',
     component: () => import('@/pages/TSX'),
   },
+  {
+    path: '/directive',
+    name: 'Directive',
+    component: () => import('@/pages/DirectivePage/index.vue'),
+  },
 ];

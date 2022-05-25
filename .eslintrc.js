@@ -17,9 +17,11 @@ module.exports = {
       jsx: true,
     },
   },
+  //定义eslint依赖的插件
+  plugins: ['@typescript-eslint', 'prettier', 'simple-import-sort'],
   extends: ['eslint:recommended', 'plugin:vue/vue3-recommended', 'prettier'],
   rules: {
-    'no-unused-vars': 'off',
+    'no-unused-vars': 'warn',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'vue/no-mutating-props': 'off',
     '@typescript-eslint/no-explicit-any': ['off'],
@@ -33,8 +35,23 @@ module.exports = {
     'vue/multi-word-component-names': [
       'warn',
       {
-        ignores: ['404', 'index'],
+        ignores: ['index'],
       },
     ],
+    'sort-imports': 'off',
+    'import/order': 'off',
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
   },
+  overrides: [
+    {
+      files: [
+        '**/__tests__/*.{j,t}s?(x)',
+        '**/tests/unit/**/*.spec.{j,t}s?(x)',
+      ],
+      env: {
+        jest: true,
+      },
+    },
+  ],
 };
