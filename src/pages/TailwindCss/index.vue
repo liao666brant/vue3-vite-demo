@@ -1,5 +1,9 @@
 <template>
-  <div>Hello world!</div>
+  <div
+    class="w-1/3 h-28 text-center m-auto my-3 bg-slate-300 shadow-lg rounded"
+  >
+    Hello world!
+  </div>
 
   <!-- <a
     class="inline-block bg-red-400 px-4 py-1 text-center rounded hover:bg-slate-500"
@@ -18,6 +22,6 @@
 
 <style scoped lang="scss">
 .btn {
-  @apply py-2 p-4 rounded bg-red-400 text-center hover:bg-slate-500;
+  @apply py-2 p-4 rounded bg-red-400 text-center hover:bg-slate-500 mx-1;
 }
 </style>
