@@ -29,14 +29,12 @@
 
 <script setup lang="ts">
 import { ElMessage } from 'element-plus';
-import { last } from 'lodash';
 import { onUnmounted } from 'vue';
 import { useRouter } from 'vue-router';
 
 import useReactive from '@/hooks/useReactive';
 import useState from '@/hooks/useState';
 import { mainStore } from '@/store';
-console.log('[ last ] 🚀, ', last);
 
 const router = useRouter();
 const store = mainStore();
