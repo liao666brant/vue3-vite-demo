@@ -14,6 +14,7 @@
 body,
 html {
   margin: 0;
+  font-size: 16px;
   font-family: '微软雅黑', Arial, Helvetica, sans-serif;
 }
 </style>

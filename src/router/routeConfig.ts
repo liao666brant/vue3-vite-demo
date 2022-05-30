@@ -1,4 +1,5 @@
 import { RouteRecordRaw } from 'vue-router';
+
 import Home from '@/pages/Home/index.vue';
 
 export const routes: Array<RouteRecordRaw> = [
@@ -26,7 +27,7 @@ export const routes: Array<RouteRecordRaw> = [
     name: 'NewsDetail',
     component: () => import('@/pages/NewsDetail/index.vue'),
     meta: { keepAlive: false, title: '' },
-    beforeEnter(to, form) {
+    beforeEnter(to) {
       document.title = to.params.title as string;
     },
   },
@@ -67,5 +68,10 @@ export const routes: Array<RouteRecordRaw> = [
     path: '/directive',
     name: 'Directive',
     component: () => import('@/pages/DirectivePage/index.vue'),
+  },
+  {
+    path: '/tailwindcss',
+    name: 'TailwindCss',
+    component: () => import('@/pages/TailwindCss/index.vue'),
   },
 ];

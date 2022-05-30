@@ -1,5 +1,6 @@
 // 全局引入样式，解决通知组件样式缺失问题
 import 'element-plus/dist/index.css';
+import '@/styles/tailwind.css';
 
 import { useIntersectionObserver } from '@vueuse/core';
 import { createPinia } from 'pinia';
@@ -16,6 +17,7 @@ app.directive('img-lazy', {
   mounted(el, binding) {
     const { stop } = useIntersectionObserver(
       el,
+      // eslint-disable-next-line no-unused-vars
       ([{ isIntersecting }], observerElement) => {
         console.log('[ isIntersecting ] 🚀, ', isIntersecting);
         if (isIntersecting) {

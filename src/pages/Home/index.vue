@@ -1,5 +1,5 @@
 <template>
-  <main class="container">
+  <main class="home-container">
     <router-view></router-view>
     <el-skeleton :loading="state.loading" :rows="5" animated>
       <transition-group
@@ -90,7 +90,7 @@ onUnmounted(() => {
 </script>
 
 <style scoped lang="scss">
-.container {
+.home-container {
   padding: 10px;
 }
 .infinite-list {

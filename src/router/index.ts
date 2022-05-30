@@ -1,8 +1,5 @@
-import {
-  createRouter,
-  createWebHashHistory,
-  createWebHistory,
-} from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
+
 import { routes } from './routeConfig';
 
 const router = createRouter({
@@ -11,7 +8,7 @@ const router = createRouter({
   routes,
 });
 
-router.beforeEach((to, from) => {
+router.beforeEach((to) => {
   console.log('[ to-beforeEach ] 🚀');
   // console.log('[ to ] 🚀, ', JSON.parse(JSON.stringify(to)));
   // console.log('[ from ] 🚀, ', JSON.parse(JSON.stringify(from)));
