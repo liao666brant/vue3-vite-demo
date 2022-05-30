@@ -38,7 +38,6 @@ specifiers:
   pinia: ^2.0.14
   postcss: ^8.4.14
   postcss-html: ^1.4.1
-  postcss-import: ^14.1.0
   prettier: ^2.6.2
   sass: ^1.52.1
   stylelint: ^14.8.5
@@ -75,7 +74,6 @@ dependencies:
   element-plus: 2.1.7_vthbrgi3nxezcsxbns6ztxtdpy
   lodash: 4.17.21
   pinia: 2.0.14_qhv4oyzxhhzeba5rd2zztmcg2y
-  postcss-import: 14.1.0_postcss@8.4.14
   vue: 3.2.36
   vue-dompurify-html: 3.0.0_vue@3.2.36
   vue-router: 4.0.15_vue@3.2.36
@@ -5019,11 +5017,6 @@ packages:
     engines: {node: '>=8.6'}
     dev: true
 
-  /pify/2.3.0:
-    resolution: {integrity: sha1-7RQaasBDqEnqWISY59yosVMw6Qw=}
-    engines: {node: '>=0.10.0'}
-    dev: false
-
   /pinia/2.0.14_qhv4oyzxhhzeba5rd2zztmcg2y:
     resolution: {integrity: sha512-0nPuZR4TetT/WcLN+feMSjWJku3SQU7dBbXC6uw+R6FLQJCsg+/0pzXyD82T1FmAYe0lsx+jnEDQ1BLgkRKlxA==}
     peerDependencies:
@@ -5058,18 +5051,6 @@ packages:
       postcss: 8.4.14
       postcss-safe-parser: 6.0.0_postcss@8.4.14
     dev: true
-
-  /postcss-import/14.1.0_postcss@8.4.14:
-    resolution: {integrity: sha512-flwI+Vgm4SElObFVPpTIT7SU7R3qk2L7PyduMcokiaVKuWv9d/U+Gm/QAd8NDLuykTWTkcrjOeD2Pp1rMeBTGw==}
-    engines: {node: '>=10.0.0'}
-    peerDependencies:
-      postcss: ^8.0.0
-    dependencies:
-      postcss: 8.4.14
-      postcss-value-parser: 4.2.0
-      read-cache: 1.0.0
-      resolve: 1.22.0
-    dev: false
 
   /postcss-js/4.0.0_postcss@8.4.14:
     resolution: {integrity: sha512-77QESFBwgX4irogGVPgQ5s07vLvFqWr228qZY+w6lW599cRlK/HmnlivnnVUxkjHnCu4J16PDMHcH+e+2HbvTQ==}
@@ -5152,6 +5133,7 @@ packages:
 
   /postcss-value-parser/4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
+    dev: true
 
   /postcss/8.4.14:
     resolution: {integrity: sha512-E398TUmfAYFPBSdzgeieK2Y1+1cpdxJx8yXbK/m57nRhKSmk1GB2tO4lbLBtlkfPQTDKfe4Xqv1ASWPpayPEig==}
@@ -5304,12 +5286,6 @@ packages:
     dependencies:
       safe-buffer: 5.2.1
     dev: true
-
-  /read-cache/1.0.0:
-    resolution: {integrity: sha1-5mTvMRYRZsl1HNvo28+GtftY93Q=}
-    dependencies:
-      pify: 2.3.0
-    dev: false
 
   /read-pkg-up/7.0.1:
     resolution: {integrity: sha512-zK0TB7Xd6JpCLmlLmufqykGE+/TlOePD6qKClNW7hHDKFh/J7/7gCWGR7joEQEW1bKq3a3yUZSObOoWLFQ4ohg==}
