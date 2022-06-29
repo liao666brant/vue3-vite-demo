@@ -13,3 +13,6 @@ export const setCssAttr = (key: string, value: string) => {
     window.document.documentElement.setAttribute(key, value);
   }
 };
+
+import { request } from './request';
+export { request };

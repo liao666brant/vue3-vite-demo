@@ -1,6 +1,7 @@
 import axios from 'axios';
-import { BASE_URL } from '@/constants';
 import cookies from 'js-cookie';
+
+import { BASE_URL } from '@/constants';
 
 type Method = 'GET' | 'POST' | 'DELETE' | 'PUT';
 
@@ -55,5 +56,3 @@ export const request: Request = async ({
       });
   });
 };
-
-export default {};
