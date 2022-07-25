@@ -1,10 +1,10 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 
 import { routes } from './routeConfig';
 
 const router = createRouter({
-  // history: createWebHashHistory(),
-  history: createWebHistory('/vue3-vite-demo'),
+  history: createWebHashHistory(),
+  // history: createWebHistory('/vue3-vite-demo'),
   routes,
 });
 

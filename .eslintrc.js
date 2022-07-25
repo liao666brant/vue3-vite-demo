@@ -21,7 +21,7 @@ module.exports = {
   plugins: ['@typescript-eslint', 'prettier', 'simple-import-sort'],
   extends: ['eslint:recommended', 'plugin:vue/vue3-recommended', 'prettier'],
   rules: {
-    'no-unused-vars': 'warn',
+    'no-unused-vars': ['warn', { args: 'after-used' }],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'vue/no-mutating-props': 'off',
     '@typescript-eslint/no-explicit-any': ['off'],
@@ -33,7 +33,7 @@ module.exports = {
       },
     ],
     'vue/multi-word-component-names': [
-      'warn',
+      'off',
       {
         ignores: ['index'],
       },

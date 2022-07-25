@@ -33,7 +33,8 @@ const editor = useEditor((root) =>
       ctx.set(rootCtx, root);
       ctx.set(defaultValueCtx, props.modelValue);
       ctx.set(editorViewOptionsCtx, { editable });
-      ctx.get(listenerCtx).markdownUpdated((ctx, markdown, prevMarkdown) => {
+      // ctx.get(listenerCtx).markdownUpdated((ctx, markdown, prevMarkdown) => {
+      ctx.get(listenerCtx).markdownUpdated((ctx, markdown) => {
         emits('update:modelValue', markdown);
       });
     })

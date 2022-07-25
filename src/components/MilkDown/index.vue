@@ -42,7 +42,8 @@ export default defineComponent({
           ctx.set(editorViewOptionsCtx, { editable });
           ctx
             .get(listenerCtx)
-            .markdownUpdated((ctx, markdown, prevMarkdown) => {
+            // .markdownUpdated((ctx, markdown, prevMarkdown) => {
+            .markdownUpdated((ctx, markdown) => {
               emits('update:modelValue', markdown);
             });
         })

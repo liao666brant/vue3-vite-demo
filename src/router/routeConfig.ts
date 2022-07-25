@@ -74,4 +74,9 @@ export const routes: Array<RouteRecordRaw> = [
     name: 'TailwindCss',
     component: () => import('@/pages/TailwindCss/index.vue'),
   },
+  {
+    path: '/fabric',
+    name: 'Fabric',
+    component: () => import('@/pages/Fabric/index.vue'),
+  },
 ];

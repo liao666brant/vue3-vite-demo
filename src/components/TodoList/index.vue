@@ -3,15 +3,9 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue';
-
 import { useReducer } from '@/hooks';
 
-import { ActionModel, actionTypes, TodoReducer } from './store';
-
-const state = reactive({
-  name: 'App',
-});
+import { TodoReducer } from './store';
 
 const [todoList, todoDispatch] = useReducer(TodoReducer, []);
 todoList;

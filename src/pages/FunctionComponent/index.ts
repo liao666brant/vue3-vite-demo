@@ -1,5 +1,6 @@
-import Component from './index.vue';
 import { h, render } from 'vue';
+
+import Component from './index.vue';
 
 export function funComponent() {
   const VNode = h(Component);

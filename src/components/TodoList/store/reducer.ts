@@ -1,6 +1,6 @@
-import actionTypes from './index';
+import { addTodo, removeTodo, toggleTodo } from './actions';
 import type { ActionModel } from './index';
-import { addTodo, toggleTodo, removeTodo } from './actions';
+import actionTypes from './index';
 
 /**
  * Reducer函数

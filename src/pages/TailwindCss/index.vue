@@ -18,27 +18,7 @@
   <button class="btn">点击4</button>
 </template>
 
-<script setup lang="ts">
-// deepCopy
-function deepCopy(obj: any) {
-  if (typeof obj !== 'object') {
-    return obj;
-  }
-  if (obj instanceof Date) {
-    return new Date(obj);
-  }
-  if (obj instanceof RegExp) {
-    return new RegExp(obj);
-  }
-  const newObj = new obj.constructor();
-  for (const key in obj) {
-    if (key in obj) {
-      newObj[key] = deepCopy(obj[key]);
-    }
-  }
-  return newObj;
-}
-</script>
+<script setup lang="ts"></script>
 
 <style scoped lang="scss">
 .btn {

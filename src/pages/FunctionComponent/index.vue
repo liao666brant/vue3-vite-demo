@@ -5,12 +5,6 @@
   </teleport>
 </template>
 
-<script setup lang="ts">
-import { reactive } from 'vue';
-
-const state = reactive({
-  name: 'App',
-});
-</script>
+<script setup lang="ts"></script>
 
 <style scoped></style>

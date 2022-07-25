@@ -1,4 +1,4 @@
-import { defineComponent, onMounted, reactive, render } from 'vue';
+import { defineComponent, onMounted, reactive } from 'vue';
 
 const One = defineComponent({
   setup(_, { expose }) {
@@ -14,7 +14,7 @@ const One = defineComponent({
       getInfo();
     });
 
-    // expose({ getInfo, state });
+    expose({ getInfo, state });
     return { state };
   },
 
@@ -27,28 +27,28 @@ const One = defineComponent({
   },
 });
 
-const Two = defineComponent({
-  setup(_, { expose }) {
-    const state = reactive({
-      name: 'TSX getRef component',
-    });
+// const Two = defineComponent({
+//   setup(_, { expose }) {
+//     const state = reactive({
+//       name: 'TSX getRef component',
+//     });
 
-    const getInfo = () => {
-      console.log('[ getInfo ] 🚀, ', getInfo);
-    };
+//     const getInfo = () => {
+//       console.log('[ getInfo ] 🚀, ', getInfo);
+//     };
 
-    onMounted(() => {
-      getInfo();
-    });
+//     onMounted(() => {
+//       getInfo();
+//     });
 
-    expose({ getInfo, state });
+//     expose({ getInfo, state });
 
-    return () => (
-      <div>
-        <p>{state.name}</p>
-      </div>
-    );
-  },
-});
+//     return () => (
+//       <div>
+//         <p>{state.name}</p>
+//       </div>
+//     );
+//   },
+// });
 
 export default One;
