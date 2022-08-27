@@ -31,9 +31,7 @@ function useReactive<T extends object>(initialState: T) {
     if (typeof temp === typeof state[key]) {
       state[key] = temp;
     } else {
-      console.warn(
-        `函数返回的数据类型-${typeof temp}不与目标类型${typeof state[key]}一致`
-      );
+      console.warn(`函数返回的数据类型-${typeof temp}不与目标类型${typeof state[key]}一致`);
     }
   };
 

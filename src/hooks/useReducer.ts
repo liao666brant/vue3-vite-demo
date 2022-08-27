@@ -10,10 +10,7 @@ interface DispatchParams<T = string> {
   payload?: any;
 }
 
-type UseReducer<T> = [
-  UnwrapNestedRefs<T>,
-  <U>(action: DispatchParams<U>) => void
-];
+type UseReducer<T> = [UnwrapNestedRefs<T>, <U>(action: DispatchParams<U>) => void];
 
 /**
  * Reducer状态管理钩子

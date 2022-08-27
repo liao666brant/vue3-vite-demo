@@ -4,9 +4,7 @@
 
   <button @click="test">1</button>
 
-  <el-button type="primary" size="default" @click="exportCanvas(theCanvas!)">
-    导出图片
-  </el-button>
+  <el-button type="primary" size="default" @click="exportCanvas(theCanvas!)"> 导出图片 </el-button>
 
   <el-button type="primary" @click="preFn">pre</el-button>
   <!-- <el-button type="primary" size="default" @click="saveFn">保存操作</el-button> -->

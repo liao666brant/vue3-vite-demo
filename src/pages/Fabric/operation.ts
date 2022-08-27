@@ -51,10 +51,7 @@ class CanvasOperation {
     const state = this.state;
     if (state.operateIndex > 0) {
       this.canvas
-        .loadFromJSON(
-          this.saveOperateList[this.state.operateIndex - 1],
-          () => {}
-        )
+        .loadFromJSON(this.saveOperateList[this.state.operateIndex - 1], () => {})
         .renderAll();
       if (this.deleteOperateList.includes(state.operateIndex - 1)) {
         console.log('[ this.deleteOperateList ] 🚀, ', this.deleteOperateList);
@@ -72,9 +69,7 @@ class CanvasOperation {
     if (state.operateIndex + 1 >= this.saveOperateList.length) {
       return;
     }
-    this.canvas
-      .loadFromJSON(this.saveOperateList[state.operateIndex + 1], () => {})
-      .renderAll();
+    this.canvas.loadFromJSON(this.saveOperateList[state.operateIndex + 1], () => {}).renderAll();
     if (this.deleteOperateList.includes(state.operateIndex + 1)) {
       const index = this.deleteOperateList.indexOf(state.operateIndex + 1);
       this.deleteOperateList.splice(index, 1);

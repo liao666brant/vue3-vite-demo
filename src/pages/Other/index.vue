@@ -4,14 +4,8 @@
   <el-button type="primary" size="default" @click="handleTo">to Why</el-button>
   <el-divider></el-divider>
   <p>useState: {{ count }}</p>
-  <el-button type="primary" size="default" @click="setCount(count + 1)">
-    +
-  </el-button>
-  <el-button
-    type="primary"
-    size="default"
-    @click="setCount((value) => value.value - 1)"
-  >
+  <el-button type="primary" size="default" @click="setCount(count + 1)"> + </el-button>
+  <el-button type="primary" size="default" @click="setCount((value) => value.value - 1)">
     -
   </el-button>
 

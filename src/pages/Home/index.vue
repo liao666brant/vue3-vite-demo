@@ -10,11 +10,7 @@
         :infinite-scroll-delay="200"
         :infinite-scroll-distance="100"
       >
-        <el-card
-          v-for="(item, index) in state.loadNews"
-          :key="index"
-          class="news-card"
-        >
+        <el-card v-for="(item, index) in state.loadNews" :key="index" class="news-card">
           <template #header>{{ item.title }}</template>
           <div
             v-dompurify-html="item.articleAbstract"
@@ -23,11 +19,7 @@
           ></div>
           <div class="author-name">{{ item.authorName }}</div>
         </el-card>
-        <el-empty
-          v-show="state.showEmpty"
-          key="empty"
-          description="没有了呢~~"
-        ></el-empty>
+        <el-empty v-show="state.showEmpty" key="empty" description="没有了呢~~"></el-empty>
       </transition-group>
     </el-skeleton>
   </main>

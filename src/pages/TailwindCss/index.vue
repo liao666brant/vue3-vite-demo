@@ -1,9 +1,5 @@
 <template>
-  <div
-    class="w-1/3 h-28 text-center m-auto my-3 bg-slate-300 shadow-lg rounded"
-  >
-    Hello world!
-  </div>
+  <div class="w-1/3 h-28 text-center m-auto my-3 bg-slate-300 shadow-lg rounded">Hello world!</div>
 
   <!-- <a
     class="inline-block bg-red-400 px-4 py-1 text-center rounded hover:bg-slate-500"

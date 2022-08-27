@@ -9,8 +9,7 @@
 <script setup lang="ts">
 // import { reactive } from 'vue';
 
-const imgUrl =
-  'https://img1.gtimg.com/ninja/2/2021/01/ninja161106114732204.jpg';
+const imgUrl = 'https://img1.gtimg.com/ninja/2/2021/01/ninja161106114732204.jpg';
 
 // const state = reactive({
 //   name: 'App',

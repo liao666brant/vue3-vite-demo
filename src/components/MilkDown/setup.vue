@@ -3,12 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import {
-  defaultValueCtx,
-  Editor,
-  editorViewOptionsCtx,
-  rootCtx,
-} from '@milkdown/core';
+import { defaultValueCtx, Editor, editorViewOptionsCtx, rootCtx } from '@milkdown/core';
 import { listener, listenerCtx } from '@milkdown/plugin-listener';
 import { commonmark } from '@milkdown/preset-commonmark';
 import { nord } from '@milkdown/theme-nord';
