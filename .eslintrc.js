@@ -21,7 +21,7 @@ module.exports = {
   plugins: ['@typescript-eslint', 'prettier', 'simple-import-sort'],
   extends: ['eslint:recommended', 'plugin:vue/vue3-recommended', 'prettier'],
   rules: {
-    'no-unused-vars': ['warn', { args: 'after-used' }],
+    '@typescript-eslint/no-unused-vars': ['warn', { args: 'after-used' }],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'vue/no-mutating-props': 'off',
     '@typescript-eslint/no-explicit-any': ['off'],
@@ -45,10 +45,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: [
-        '**/__tests__/*.{j,t}s?(x)',
-        '**/tests/unit/**/*.spec.{j,t}s?(x)',
-      ],
+      files: ['**/__tests__/*.{j,t}s?(x)', '**/tests/unit/**/*.spec.{j,t}s?(x)'],
       env: {
         jest: true,
       },
