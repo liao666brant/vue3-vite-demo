@@ -72,8 +72,8 @@ export default defineConfig({
       },
     }),
   ],
-  base: '/vue3-vite-demo/',
-  // base: '/',
+  // base: '/vue3-vite-demo/',
+  base: '/',
   resolve: {
     extensions: ['.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
     alias: [
