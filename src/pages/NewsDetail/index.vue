@@ -1,5 +1,7 @@
 <template>
   <div class="main">
+    <MyMilkDown />
+
     <el-card class="news-card">
       <template #header>
         {{ params.title }}
@@ -20,7 +22,9 @@ import { COVID19NewsModel } from '@/api/news';
 defineExpose({});
 
 const route = useRoute();
+console.log('[ route ] 🚀, ', route);
 const params = reactive(route.params as unknown as COVID19NewsModel);
+console.log('[ params ] 🚀, ', params);
 
 // console.log('[ params ] 🚀, ', params);
 

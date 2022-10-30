@@ -22,7 +22,7 @@ app.directive('img-lazy', {
     const { stop } = useIntersectionObserver(
       el,
       // eslint-disable-next-line no-unused-vars
-      ([{ isIntersecting }], observerElement) => {
+      ([{ isIntersecting }]) => {
         console.log('[ isIntersecting ] 🚀, ', isIntersecting);
         if (isIntersecting) {
           el.src = binding.value;

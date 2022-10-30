@@ -20,4 +20,4 @@ const removeTodo = (state: any, payload: any) => {
   }
 };
 
-export { addTodo, toggleTodo, removeTodo };
+export { addTodo, removeTodo, toggleTodo };

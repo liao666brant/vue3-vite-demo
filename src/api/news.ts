@@ -13,6 +13,7 @@ export interface COVID19NewsModel {
   realPublishTime: string;
   title: string;
   url: string;
+  [key: string]: any;
 }
 
 export const COVID19News = async (): Promise<COVID19NewsModel[]> => {

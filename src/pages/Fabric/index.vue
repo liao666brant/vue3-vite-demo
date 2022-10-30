@@ -4,7 +4,9 @@
 
   <button @click="test">1</button>
 
-  <el-button type="primary" size="default" @click="exportCanvas(theCanvas!)"> 导出图片 </el-button>
+  <el-button type="primary" size="default" @click="exportCanvas(theCanvas as fabric.Canvas)">
+    导出图片
+  </el-button>
 
   <el-button type="primary" @click="preFn">pre</el-button>
   <!-- <el-button type="primary" size="default" @click="saveFn">保存操作</el-button> -->
@@ -16,7 +18,7 @@
 import { fabric } from 'fabric';
 import { onMounted, ref } from 'vue';
 
-const $canvas = ref<HTMLCanvasElement | null>(null);
+const $canvas = ref<HTMLCanvasElement>();
 const theCanvas = ref<fabric.Canvas | null>(null);
 
 const history: any[] = [];
@@ -40,6 +42,7 @@ function exportCanvas(canvas: fabric.Canvas) {
 }
 
 const initCanvas = () => {
+  if (!$canvas.value) return;
   const canvas = new fabric.Canvas($canvas.value);
   theCanvas.value = canvas;
   const rect = new fabric.Rect({

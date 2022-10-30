@@ -17,9 +17,7 @@ export const setCssAttr = (key: string, value: string) => {
 const updateObject = <T extends Object>(target: T, source: T, valid: boolean) => {
   for (const key in target) {
     if (key in source) {
-      // if (mode === 'truth' && (source[key] ?? true)) continue;
-
-      if (valid && [undefined, null].some((value) => source[key] === value)) continue;
+      if (valid && (source[key] ?? true)) continue;
       target[key] = source[key];
     }
   }

@@ -22,7 +22,7 @@ const props = defineProps({
 const emits = defineEmits(['update:modelValue']);
 
 const editable = () => !props.readonly;
-const editor = useEditor((root) =>
+const { editor } = useEditor((root) =>
   Editor.make()
     .config((ctx) => {
       ctx.set(rootCtx, root);
