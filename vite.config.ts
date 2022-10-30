@@ -7,6 +7,19 @@ import Components from 'unplugin-vue-components/vite';
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 
+const defaultComponentResolver = (componentName: string) => {
+  if (componentName.startsWith('My')) {
+    const path = `${__dirname}/src/components/${componentName.slice(2)}/index.vue`.replaceAll(
+      /\\/g,
+      '/'
+    );
+    return {
+      name: 'default',
+      from: path,
+    };
+  }
+};
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -16,7 +29,7 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
     Components({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [ElementPlusResolver(), defaultComponentResolver],
     }),
     VitePWA({
       includeAssets: ['favicon.svg'],
